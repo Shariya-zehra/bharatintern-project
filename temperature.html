@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+         <link rel="stylesheet" href="temperature.css">
+</head>
+<body>
+    <div class="converter">
+        <h1>Temperature Converter</h1>
+        <input type="number" id="inputTemp" placeholder="Enter temperature">
+        <select id="fromUnit">
+            <option value="celsius">Celsius (°C)</option>
+            <option value="fahrenheit">Fahrenheit (°F)</option>
+        </select>
+        <p>to</p>
+        <select id="toUnit">
+            <option value="celsius">Celsius (°C)</option>
+            <option value="fahrenheit">Fahrenheit (°F)</option>
+        </select>
+        <br>
+
+        <button  id="convert" onclick="cal()"> Button</button>
+        <input type="number" id="result">
+        
+        
+    </div>
+ 
+</body>
+
+<script>
+
+    function cal() 
+    {
+var x = parseFloat(document.getElementById("inputTemp").value);
+var y = document.getElementById("fromUnit").value;
+var z = document.getElementById("toUnit").value;
+var myresult = 0;
+
+if (y == "celsius" && z == "fahrenheit")
+ {
+    myresult = (x * 9/5) + 32;
+ } 
+else if (y == "fahrenheit" && z == "celsius")
+ {
+    myresult = (x - 32) * 5/9;
+ } 
+else
+ {
+   myresult = x;
+ }
+
+document.getElementById("result").value = myresult;
+}
+
+
+
+</script>
+</html>
